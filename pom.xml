@@ -16,6 +16,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
         <vaadin.version>13.0-SNAPSHOT</vaadin.version>
+        <flow.version>2.0.0.alpha2</flow.version>
     </properties>
 
     <repositories>
@@ -69,17 +70,17 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-server</artifactId>
-            <version>2.0-SNAPSHOT</version>
+            <version>${flow.version}</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-client</artifactId>
-            <version>2.0-SNAPSHOT</version>
+            <version>${flow.version}</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-data</artifactId>
-            <version>2.0-SNAPSHOT</version>
+            <version>${flow.version}</version>
         </dependency>
         <!-- Added to provide logging output as Flow uses -->
         <!-- the unbound SLF4J no-operation (NOP) logger implementation -->
@@ -214,10 +215,11 @@
                     <plugin>
                         <groupId>com.vaadin</groupId>
                         <artifactId>flow-maven-plugin</artifactId>
-                        <version>2.0-SNAPSHOT</version>
+                        <version>${flow.version}</version>
                         <executions>
                             <execution>
                                 <goals>
+                                    <!-- When components are aligned the goal 'copy-frontend-files' should be added-->
                                     <goal>update-npm-dependencies</goal>
                                     <goal>update-imports</goal>
                                 </goals>
